@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css')}}">
+</head>
+<body>
+    <center><p><h1>Топ людей по популярности в мире</p></h1></center>
+    <div class="box">
+        {% for i in r%}
+            <div style="width: 300px; height: 889px;text-align: center; background-color: white; border: 1px solid black; border-radius:10px; overflow: hidden; margin-top: 10px;">
+                <div style="width: 300px;  height: 450px;text-align: center;  overflow: hidden; background-image: url({{i['url-img']}}); background-size:cover; "></div>
+                <p>Имя Фамилия :{{i['name']}}</p>
+                <p>Всего подписчиков:{{i['subs_all']}}</p>
+                <p>Подписчиков в инст:{{i['subs_inst']}}</p>
+                <p>Подписчиков в Фейсбуке:{{i['subs_Facebook']}}</p>
+                <p>Подписчиков в твитере:{{i['subs_Twitter']}}</p>
+                <p>Информация:{{i['info']}}</p>
+            </div>
+        {% endfor%}
+
+    </div>
+    <div>
+        <center><h1>Форма для добавления человека</h1></center>
+        <form action="" method="post">
+            <p>
+                <label for="name">Имя и Фамилия</label>
+                <input type="text" name="name" class="i5">
+            </p>
+            <p>
+                <label for="subs_all">Всего подписчиков</label>
+                <input type="text" name="subs_all" class="i5">
+            </p>
+            <p>
+                <label for="subs_inst">Подписчиков в инстаграме</label>
+                <input type="text" name="subs_inst" class="i5">
+            </p>
+            <p>
+                <label for="subs_Facebook">Подписчиков в Фейсбуке</label>
+                <input type="text" name="subs_Facebook" class="i5">
+            </p>
+            <p>
+                <label for="subs_Twitter">Подписчиков в твитере</label>
+                <input type="text" name="subs_Twitter" class="i5">
+            </p>
+            <p>
+                <label for="info" id="l1">Информация о нем</label>
+                <textarea name="info" cols="40" rows="3" id="text1"></textarea>
+            </p>
+            <p>
+                <label for="url-img">URL картинка человека</label>
+                <input type="text" name="url-img" class="i5">
+            </p>
+            <p>
+                <input type="submit">
+            </p>
+
+
+
+        </form>
+    </div>
+</body>
+</html>

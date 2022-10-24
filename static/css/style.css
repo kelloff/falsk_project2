@@ -1,0 +1,19 @@
+.box
+{
+    display: flex;
+    border: 10% solid black;
+    width: 100%;
+    justify-content: space-around;
+    height: 100%;
+    flex-wrap: wrap;
+}
+body 
+{
+    background-color: gray;
+}
+.i5
+{
+    position: absolute;
+    left: 200px;
+    
+}
